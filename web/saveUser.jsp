@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.kim.model.UserInfo" %><%--
+<%@ page import="com.kim.model.userInfo" %><%--
   Created by IntelliJ IDEA.
   User: kgako
   Date: 2022/9/10
@@ -14,9 +14,9 @@
 <body>
 success!
 <%
-UserInfo user = (UserInfo)request.getAttribute("user");
+List<userInfo> user = (List<userInfo>)request.getAttribute("userInfo");
 %>
-<%=user.getUserName()%>
-<%=user.getPassword()%>
+<%=user.get(0).getUsername()%>
+<%=user.get(0).getPassword()%>
 </body>
 </html>

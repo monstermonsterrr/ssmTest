@@ -13,10 +13,7 @@
     <title>index</title>
   </head>
   <body>
-  <form method="post" action="${pageContext.request.contextPath}/hello">
-    <input type="text" value="userName"  name="userName"><br>
-    <input type="password" value="passWord" name="passWord">
-    <button type="submit">submit</button>
+<a href="${pageContext.request.contextPath}/selectAll">点击跳转</a>
   </form>
   </body>
 </html>
