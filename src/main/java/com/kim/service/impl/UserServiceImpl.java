@@ -20,13 +20,29 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private userInfoMapper userInfoMapper;
     @Override
-    public void saveUser(Map<String, Object> params) {
-
+    public void saveUser(userInfo userInfo) {
+        userInfoMapper.insert(userInfo);
     }
 
     @Override
     public List<userInfo> selectAll() {
         List<userInfo> userList = userInfoMapper.selectAll();
         return userList;
+    }
+
+    @Override
+    public void deleteUser(String userId) {
+        userInfoMapper.deleteByPrimaryKey(userId);
+    }
+
+    @Override
+    public void updateUser(userInfo userInfo) {
+        userInfoMapper.updateByPrimaryKey(userInfo);
+    }
+
+    @Override
+    public userInfo selectOne(String userId) {
+        userInfo userInfo = userInfoMapper.selectByPrimaryKey(userId);
+        return userInfo;
     }
 }

@@ -13,7 +13,13 @@ import java.util.Map;
  */
 
 public interface UserService {
-     void saveUser(Map<String,Object> params);
+     void saveUser(userInfo userInfo);
 
      List<userInfo> selectAll();
+
+     void deleteUser(String userId);
+
+     void updateUser(userInfo userInfo);
+
+     userInfo selectOne(String userId);
 }
